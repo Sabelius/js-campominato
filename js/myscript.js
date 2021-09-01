@@ -49,7 +49,7 @@ while (playerNumber.length < (100 - 16) && explosion == false) {
 
 console.log("Hai realizzato un punteggio di: " + playerNumber.length);
 
-if( playerNumber.length == (20 - 16)){
+if( playerNumber.length == (100 - 16)){
   console.log("Hai vinto0o0o0o0o0o0o!!!");
 }
 
