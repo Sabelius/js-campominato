@@ -30,6 +30,7 @@ function numeriInArray(array, element) {
 while (playerNumber.length < (20 - 16) && explosion == false) {
   questionNumber = parseInt(prompt("Inserisci un numero:"));
   console.log(playerNumber);
+  points++;
   if (numeriInArray(arrBomb, questionNumber) == false) {
     playerNumber.push(questionNumber);
   } else if (numeriInArray(arrBomb, questionNumber) == true) {
@@ -38,9 +39,12 @@ while (playerNumber.length < (20 - 16) && explosion == false) {
   }
 }
 
+console.log("Hai realizzato un punteggio di:" + points);
+
 if( playerNumber.length == (20 - 16)){
-  console.log("Hai vinto0o0o0o0o0o0o!!! Hai totalizzato un punteggio di:" + points);
+  console.log("Hai vinto0o0o0o0o0o0o!!!");
 }
+
 
 
 
