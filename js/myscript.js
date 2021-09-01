@@ -4,9 +4,9 @@ let questionNumber;
 let explosion = false;
 let playerNumber = [];
 
-function getRandomNumbers(bomblength){
+function getRandomNumbers(bombLength){
   let array = [];
-  while (array.length < bomblength) {
+  while (array.length < bombLength) {
     numberBomb = Math.floor(Math.random() * 100) + 1;
     if (array.indexOf(numberBomb) === -1) {
       array.push(numberBomb);
@@ -32,10 +32,10 @@ function numeriInArray(array, element) {
 
 
 
-while (playerNumber.length < (20 - 16) && explosion == false) {
+while (playerNumber.length < (100 - 16) && explosion == false) {
   questionNumber = parseInt(prompt("Inserisci un numero:"));
   if (numeriInArray(arrBomb, questionNumber) == false) {
-    if(numeriInArray(playerNumber, questionNumber) == false){
+    if(numeriInArray(playerNumber, questionNumber) == false && questionNumber >= 1 && questionNumber <=100){
       playerNumber.push(questionNumber);
     }else{
       console.log("Inserisci un numero valido!!!");
