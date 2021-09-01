@@ -1,9 +1,9 @@
 let arrBomb = [];
 let numberBomb;
 let questionNumber;
+let explosion = false;
 let playerNumber = [];
-let points;
-console.log(arrBomb);
+let points = 0;
 
 while (arrBomb.length < 16) {
   numberBomb = Math.floor(Math.random() * 100) + 1;
@@ -14,23 +14,40 @@ while (arrBomb.length < 16) {
 console.log(arrBomb);
 
 
-function numeriInArray (array, elemento){
+
+function numeriInArray(array, element) {
   let i = 0;
-  if(array[i] == elemento){
-    return true;
+  for (i = 0; i < array.length; i++) {
+    if (array[i] == element) {
+      return true;
+    }
   }
   return false;
 }
 
 
-while (playerNumber.length < (100 - 16)) {
+
+while (playerNumber.length < (20 - 16) && explosion == false) {
   questionNumber = parseInt(prompt("Inserisci un numero:"));
-  if(numeriInArray(arrBomb, questionNumber) == false){
+  console.log(playerNumber);
+  if (numeriInArray(arrBomb, questionNumber) == false) {
     playerNumber.push(questionNumber);
-  }else if(numeriInArray(arrBomb, questionNumber) == true){
-    console.log("BOOOOOOOOOM!!!");
+  } else if (numeriInArray(arrBomb, questionNumber) == true) {
+    console.log("BOOOOOOOOOM!!! La partita è terminata!!!");
+    explosion = true;
   }
 }
+
+if( playerNumber.length == (20 - 16)){
+  console.log("Hai vinto0o0o0o0o0o0o!!! Hai totalizzato un punteggio di:" + points);
+}
+
+
+
+
+
+
+
 
 
 
