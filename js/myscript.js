@@ -1,4 +1,5 @@
-let livello;
+let level;
+let maxRangeNumber;
 let minRangeNumber;
 let randomMaxNumber;
 let arrBomb = [];
@@ -7,21 +8,24 @@ let questionNumber;
 let explosion = false;
 let playerNumber = [];
 
-livello = parseInt(prompt("Inserisci un livello di difficoltà tra 0, 1 e 2:"));
-if (livello != 0 && livello != 1 && livello != 2) {
-  livello = alert("Inserisci un livello di difficoltà esistente!!!");
+level = parseInt(prompt("Inserisci un livello di difficoltà tra 0, 1 e 2:"));
+if (level != 0 && level != 1 && level != 2) {
+  level = parseInt(prompt("Inserisci un livello di difficoltà esistente:"));
 }
 
-switch (livello) {
+switch (level) {
   case 0:
-    minRangeNumber = 15;
+    maxRangeNumber = 20;
+    minRangeNumber = 16;
     randomMaxNumber = 100;
   break;
   case 1:
+    maxRangeNumber = 20;
     minRangeNumber = 14;
     randomMaxNumber = 80;
   break;
   case 2:
+    maxRangeNumber = 20;
     minRangeNumber = 12;
     randomMaxNumber = 50;
   break;
@@ -56,7 +60,7 @@ function numbersInArray(array, element) {
 
 
 
-while (playerNumber.length < (20 - minRangeNumber) && explosion == false) {
+while (playerNumber.length < (maxRangeNumber - minRangeNumber) && explosion == false) {
   questionNumber = parseInt(prompt("Inserisci un numero:"));
   if (numbersInArray(arrBomb, questionNumber) == false) {
     if (numbersInArray(playerNumber, questionNumber) == false && questionNumber >= 1 && questionNumber <= randomMaxNumber) {
@@ -73,7 +77,7 @@ while (playerNumber.length < (20 - minRangeNumber) && explosion == false) {
 
 console.log("Hai realizzato un punteggio di: " + playerNumber.length);
 
-if (playerNumber.length == (20 - minRangeNumber)) {
+if (playerNumber.length == (maxRangeNumber - minRangeNumber)) {
   console.log("Hai vinto0o0o0o0o0o0o!!!");
 }
 
