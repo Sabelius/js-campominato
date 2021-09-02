@@ -14,23 +14,24 @@ if (level != 0 && level != 1 && level != 2) {
   document.getElementById("avviso").innerHTML = "Inserisci un livello di difficoltà esistente!!!";
 }
 
-switch (level) {
-  case 0:
-    maxRangeNumber = 20;
-    minRangeNumber = 16;
-    randomMaxNumber = 100;
-  break;
-  case 1:
-    maxRangeNumber = 20;
-    minRangeNumber = 14;
-    randomMaxNumber = 80;
-  break;
-  case 2:
-    maxRangeNumber = 20;
-    minRangeNumber = 12;
-    randomMaxNumber = 50;
-  break;
-}
+
+  switch (level) {
+    case 0:
+      maxRangeNumber = 20;
+      minRangeNumber = 16;
+      randomMaxNumber = 100;
+    break;
+    case 1:
+      maxRangeNumber = 20;
+      minRangeNumber = 14;
+      randomMaxNumber = 80;
+    break;
+    case 2:
+      maxRangeNumber = 20;
+      minRangeNumber = 12;
+      randomMaxNumber = 50;
+    break;
+  }
 
 
 function getRandomNumbers(bombLength) {
